@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0e0e10;
+}
+
+.clock {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 4px solid #ffffff22;
+  backdrop-filter: blur(5px);
+  background: #1a1a1d;
+  box-shadow: 0 0 20px #000, inset 0 0 40px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  position: absolute;
+  font-size: 22px;
+  color: #e0e0e0;
+  font-weight: 500;
+  transform: rotate(calc(var(--i) * 30deg - 90deg)) translate(130px)
+    rotate(calc(90deg - var(--i) * 30deg));
+}
+
+.handle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hour,
+.minutes,
+.seconds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%);
+  border-radius: 6px;
+}
+
+.hour {
+  width: 8px;
+  height: 80px;
+  background: #ffffffcc;
+  z-index: 3;
+}
+
+.minutes {
+  width: 6px;
+  height: 110px;
+  background: #ffffff66;
+  z-index: 2;
+}
+
+.seconds {
+  width: 3px;
+  height: 120px;
+  background: #ff3b3b;
+  z-index: 1;
+}
+
+.center-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px #fff;
+}
+
+.signature {
+  position: absolute;
+  bottom: 60px;
+  font-size: 12px;
+  color: #bcbcbc;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.signature span {
+  color: #ff3b3b;
+  font-weight: 600;
+}
